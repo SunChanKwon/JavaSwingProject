@@ -1,31 +1,29 @@
 package View;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridLayout;
+import Select.AllStateSession;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+public class StudentTestPage extends JFrame implements ActionListener {
 
-import Select.*;
 
-public class AdminTestPage extends JFrame implements ActionListener {
-
+	AllStateSession LoginSession = new AllStateSession();//세션 객체 받아옴---추가한거
 
 	JPanel northPane;
-	JLabel northlb1; 
+	JLabel northlb1;
 	JButton logout;
 
 	JPanel leftMenuPane;
-	String [] menuTitle = {"공지사항관리", "강의정보관리","교수정보관리","학생정보관리"};
+	String [] menuTitle = {"학생test", "강의정보관리","교수정보관리","학생정보관리"};
 	Font font;
 
 
-	
-	public AdminTestPage() {
+
+	public StudentTestPage() {
+		
 		init();
 		setSize(1024,768);
 		setVisible(true);
@@ -39,17 +37,17 @@ public class AdminTestPage extends JFrame implements ActionListener {
 
 	}
 
-	public void setNorthPane() {
+	public void setNorthPane() {		
 
 		northPane = new JPanel(new BorderLayout());	
 		northPane.setBackground(new Color(33, 140, 116));
-
-		northlb1 = new JLabel("ID:"+AllStateSession.login_id+"Name:"+AllStateSession.login_name); //������ ����
+		
+		northlb1 = new JLabel("ID:"+AllStateSession.login_id+"이름:"+AllStateSession.login_name); //������ ����
 		northlb1.setHorizontalAlignment(JLabel.CENTER);
 
 		northlb1.setOpaque(true);
 		northlb1.setBackground(new Color(33, 140, 116)); 
-		northlb1.setForeground(Color.black);
+		northlb1.setForeground(Color.white);
 		northlb1.setPreferredSize(new Dimension(900, 0));
 
 		logout = new JButton("LogOut");
@@ -87,7 +85,7 @@ public class AdminTestPage extends JFrame implements ActionListener {
 		if(event==logout)
 		{
 			AllStateSession.login_id=null;
-			AllStateSession.login_name=null;
+			AllStateSession.login_state=0;
 			setVisible(false);
 			new MainIndex();
 		}
@@ -96,7 +94,7 @@ public class AdminTestPage extends JFrame implements ActionListener {
 	}//---추가한거
 	public static void main(String[] args) {
 		System.out.println("asdasd");
-		new AdminTestPage();
+		new StudentTestPage();
 	}
 
 

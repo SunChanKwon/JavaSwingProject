@@ -135,8 +135,8 @@ public class MainIndex extends JFrame implements ActionListener {
             int session =LDao.Login(id, pw);
             if(session==1)
             {
+                AllStateSession.login_id=id;
                 System.out.println(AllStateSession.login_id);
-                System.out.println(AllStateSession.login_state);
                 System.out.printf("어드민 들어갑니다");
                 setVisible(false);
 
@@ -147,11 +147,17 @@ public class MainIndex extends JFrame implements ActionListener {
             else if(session==2)
             {
                 System.out.printf("교수 들어갑니다");
+                setVisible(false);
+
+                new ProTestPage();
                 //교수 객체 쓰면됨
             }
             else if(session==3)
             {
                 System.out.printf("학생 들어갑니다");
+                setVisible(false);
+
+                new StudentTestPage();
                 //학생 객체 쓰면됨
             }
             else

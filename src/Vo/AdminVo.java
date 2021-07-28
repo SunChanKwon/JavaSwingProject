@@ -2,7 +2,7 @@ package Vo;
 
 public class AdminVo {
     private int Admin_Code;
-    private String Admin_pw;
+    private String admin_pw;
     private String admin_name;
 
     public int getAdmin_Code() {
@@ -14,11 +14,11 @@ public class AdminVo {
     }
 
     public String getAdmin_pw() {
-        return Admin_pw;
+        return admin_pw;
     }
 
     public void setAdmin_pw(String admin_pw) {
-        Admin_pw = admin_pw;
+        admin_pw = admin_pw;
     }
 
     public String getAdmin_name() {

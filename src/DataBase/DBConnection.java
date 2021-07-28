@@ -20,7 +20,7 @@ public class DBConnection {
     protected ResultSet rs;
 
     String Url = "jdbc:oracle:thin:@bitcamp4.iptime.org:1521:xe";
-    String username = "c##Class04";
+    String username = "c##TEST04";
     String password = "qazwsxedc";
     String sql;
 
